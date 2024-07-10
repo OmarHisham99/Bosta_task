@@ -7,5 +7,9 @@
   "Track_Shipment": "تتبع شحنتك",
   "Sign_In": "تسجيل الدخول",
   "Track_Your_Shipment": "تتبع شحنتك",
-  "Tracking_Number": "رقم التتبع"
+  "Tracking_Number": "رقم التتبع",
+  "Shipment_Number": "رقم الشحنة",
+  "Last_Update": "آخر تحديث",
+  "Provider_Name": "اسم التاجر",
+  "Delivery_time_within": "موعد التسليم خلال"
 }

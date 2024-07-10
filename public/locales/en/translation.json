@@ -7,5 +7,9 @@
   "Track_Shipment": "Track Shipment",
   "Sign_In": "Sign In",
   "Track_Your_Shipment": "Track Your Shipment",
-  "Tracking_Number": "Tracking Number"
+  "Tracking_Number": "Tracking Number",
+  "Shipment_Number": "Shipment Number",
+  "Last_Update": "Last Update",
+  "Provider_Name": "Provider Name",
+  "Delivery_time_within": "Promised Delivery Date"
 }

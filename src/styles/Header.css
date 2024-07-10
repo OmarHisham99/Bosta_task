@@ -41,6 +41,10 @@
 .language-switch {
   color: red;
   font-weight: bold;
+  cursor: pointer;
+}
+.language-switch:hover {
+  text-decoration: underline;
 }
 
 [dir="rtl"] .header {

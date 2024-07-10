@@ -1,0 +1,15 @@
+.shipmentStatusContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    padding: 10px;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+}
+
+.shipmentDetails {
+    display: flex;
+    justify-content: space-around;
+}

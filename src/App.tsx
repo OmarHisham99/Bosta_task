@@ -5,6 +5,7 @@ import "./styles/fonts.css";
 import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import { useEffect } from "react";
+import TrackingDetails from "./components/TrackingDetails";
 
 function App() {
   // *************** i18n ***************
@@ -16,9 +17,10 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <Header />
-      </div>
+      <Header />
+      <main className="main-content">
+        <TrackingDetails />
+      </main>
     </div>
   );
 }

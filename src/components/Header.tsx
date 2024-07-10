@@ -39,6 +39,14 @@
 
 // export default Header;
 import React from "react";
+import { useTranslation } from "react-i18next";
+import bosta_logo from "../assets/images/bosta_logo.svg";
+import bosta_logo_ar from "../assets/images/bosta_logo_ar.svg";
+import "../styles/Header.css";
+import TrackShipments from "./TrackShipments";
+import LanguageSwitcher from "./languageSelector";
+import { Popover } from "antd";
+
 import {
   Navbar,
   NavbarBrand,
@@ -51,10 +59,13 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import bosta_logo from "../assets/images/bosta_logo.svg";
-import bosta_logo_ar from "../assets/images/bosta_logo_ar.svg";
-
 export default function Header() {
+  const { t, i18n } = useTranslation();
+
+  const getLogo = () => {
+    const lang = i18n.language || "en"; // Default language if undefined
+    return lang === "ar" ? bosta_logo_ar : bosta_logo;
+  };
   const menuItems = [
     "Profile",
     "Dashboard",
@@ -84,44 +95,48 @@ export default function Header() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
           {/* <AcmeLogo /> */}
-          <p className="font-bold text-inherit">ACME</p>
+          <img src={getLogo()} alt="logo" />
         </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent justify="end">
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page" color="warning">
-            Customers
+          <Link className="navbar_link" color="foreground" href="#">
+            {t("Home")}
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+          <Link
+            className="navbar_link"
+            color="foreground"
+            href="#"
+            aria-current="page"
+          >
+            {t("Prices")}
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="navbar_link" color="foreground" href="#">
+            {t("Call_Sales")}
           </Link>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
+        <Popover placement="bottom" arrow={false} content={<TrackShipments />}>
+          <NavbarItem className="hidden lg:flex">
+            <Link className="navbar_link" color="foreground">
+              {t("Track_Shipment")}
+            </Link>
+          </NavbarItem>
+        </Popover>
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Sign Up
-          </Button>
+          <a className="navbar_link">{t("Sign_In")}</a>
         </NavbarItem>
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Sign Up
-          </Button>
+        <NavbarItem className="language-switch">
+          <a>
+            <LanguageSwitcher></LanguageSwitcher>
+          </a>
         </NavbarItem>
       </NavbarContent>
 

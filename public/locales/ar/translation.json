@@ -11,5 +11,16 @@
   "Shipment_Number": "رقم الشحنة",
   "Last_Update": "آخر تحديث",
   "Provider_Name": "اسم التاجر",
-  "Delivery_time_within": "موعد التسليم خلال"
+  "Delivery_time_within": "موعد التسليم خلال",
+  "DELIVERED": "تم التوصيل",
+  "TICKET_CREATED": "تم إنشاء الشحنة",
+  "PACKAGE_RECEIVED": "تم استلام الشحنة من التاجر",
+  "OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
+  "DELIVERED_TO_SENDER": "تم التوصيل للتاجر",
+  "CANCELLED": "تم الإلغاء",
+  "NOT_YET_SHIPPED": "لم يتم الشحن بعد",
+  "AVAILABLE_FOR_PICKUP": "متاح للاستلام",
+  "WAITING_FOR_CUSTOMER_ACTION": "في انتظار تحرك العميل",
+  "IN_TRANSIT": "في الطريق",
+  "DELIVERY_FAILED": "فشل التوصيل"
 }

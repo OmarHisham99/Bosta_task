@@ -11,5 +11,16 @@
   "Shipment_Number": "Shipment Number",
   "Last_Update": "Last Update",
   "Provider_Name": "Provider Name",
-  "Delivery_time_within": "Promised Delivery Date"
+  "Delivery_time_within": "Promised Delivery Date",
+  "DELIVERED": "Delivered",
+  "TICKET_CREATED": "Ticket Created",
+  "PACKAGE_RECEIVED": "Package Received",
+  "OUT_FOR_DELIVERY": "Out for Delivery",
+  "DELIVERED_TO_SENDER": "Delivered to Sender",
+"CANCELLED": "Cancelled",
+"NOT_YET_SHIPPED": "Not Yet Shipped",
+"AVAILABLE_FOR_PICKUP": "Available for Pickup",
+"WAITING_FOR_CUSTOMER_ACTION": "Waiting for Customer Action",
+"IN_TRANSIT": "In Transit",
+"DELIVERY_FAILED": "Delivery Failed"
 }

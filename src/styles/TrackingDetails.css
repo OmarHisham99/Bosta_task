@@ -13,3 +13,14 @@
     display: flex;
     justify-content: space-around;
 }
+
+.headLine {
+    font-size: 12px;
+    display: flex;
+    color: #a7a7a7;
+}
+
+.steps {
+    font-family: cairo;
+}
+

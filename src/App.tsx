@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Header from "./components/Header";
 import { useEffect } from "react";
 import TrackingDetails from "./components/TrackingDetails";
+import { useAppDispatch, useAppSelector } from "./store/hooks/hooks";
 
 function App() {
   // *************** i18n ***************

@@ -1,34 +1,49 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import "../styles/TrackingStatus.css";
+import "../styles/TrackingDetails.css";
 import { Divider } from "antd";
-import TrackingStatus from "./TrackingStatus";
+import TrackingStatus from "./TrackShipment/TrackingStatus";
+import { TrackingInfo } from "../Typings/TrackingInfo";
+import { useAppSelector } from "../store/hooks/hooks";
+import { getCurrentStateColor } from "../utils/tracking";
 
 const TrackingDetails: React.FC = () => {
+  // *************** i18n ***************
   const { t } = useTranslation();
+  // *************** Redux ***************
+  const trackingData: TrackingInfo | null = useAppSelector(
+    (state) => state.tracking.trackingInfoData
+  );
+  const currentStatusTitle = trackingData?.CurrentStatus?.state
+    ? t(trackingData.CurrentStatus.state)
+    : ""; // Fallback in case of undefined state
+
+  const currentStateColor = getCurrentStateColor(trackingData);
   return (
     <div className="shipmentStatusContainer">
       <div className="shipmentDetails">
         <div>
-          {t("Shipment_Number")}
-          <p>Shipment Delivered</p>
+          <p className="headLine">
+            {t("Shipment_Number")} {trackingData?.TrackingNumber}
+          </p>
+          <p style={{ color: currentStateColor }}>{currentStatusTitle}</p>
         </div>
         <div>
-          {t("Last_Update")}
-          <p>Shipment Delivered</p>
+          <p className="headLine">{t("Last_Update")}</p>
+          <p>{trackingData?.CurrentStatus.timestamp}</p>
         </div>
         <div>
-          {t("Provider_Name")}
-          <p>Shipment Delivered</p>
+          <p className="headLine">{t("Provider_Name")}</p>
+          <p>{trackingData?.provider}</p>
         </div>
         <div>
-          {t("Delivery_time_within")}
-          <p>Shipment Delivered</p>
+          <p className="headLine">{t("Delivery_time_within")}</p>
+          <p>{trackingData?.PromisedDate}</p>
         </div>
       </div>
       <Divider />
       <div>
-        <TrackingStatus />
+        <TrackingStatus trackingData={trackingData} />
       </div>
     </div>
   );

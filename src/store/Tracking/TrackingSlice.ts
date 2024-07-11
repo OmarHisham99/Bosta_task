@@ -26,14 +26,13 @@ export const fetchTrackingData = createAsyncThunk(
     const response = await axios.get(
       `https://tracking.bosta.co/shipments/track/${trackingNumber}?lang=${lang}`
     );
-    // Adapt the API response here if necessary
     const data = response.data;
-    // console.log(data);
     return {
       trackingData: data,
     };
   }
 );
+
 const trackingSlice = createSlice({
   name: "tracking",
   initialState,

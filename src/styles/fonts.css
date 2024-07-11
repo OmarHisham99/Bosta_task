@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Cairo';
+  src: url('../assets/fonts/Cairo-Light.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'Cairo';
@@ -12,12 +18,14 @@
   font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cairo';
   src: url('../assets/fonts/Cairo-Medium.ttf') format('truetype');
   font-weight: medium;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Cairo';
   src: url('../assets/fonts/Cairo-ExtraBold.ttf') format('truetype');
@@ -28,5 +36,5 @@
 
 
 body {
-  font-family: 'Cairo', sans-serif; 
+  font-family: 'Cairo', sans-serif;
 }

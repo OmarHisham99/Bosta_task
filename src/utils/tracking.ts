@@ -1,61 +1,41 @@
+import { Colors } from "../Constants/Colors";
 import { TIMELINE_STEPS, TIMELINE_STEPS_ORDER } from "../Constants/Shipments";
 import { TrackingInfo } from "../Typings/TrackingInfo";
 
 // Function to get the current step of the tracking
 export const getCurrentStep = (trackingData: TrackingInfo | null) => {
-  switch (trackingData?.CurrentStatus.state) {
-    case TIMELINE_STEPS.TICKET_CREATED:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.TICKET_CREATED];
-    case TIMELINE_STEPS.PACKAGE_RECEIVED:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.PACKAGE_RECEIVED];
-    case TIMELINE_STEPS.OUT_FOR_DELIVERY:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.OUT_FOR_DELIVERY];
-    case TIMELINE_STEPS.CANCELLED:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.CANCELLED];
-    case TIMELINE_STEPS.NOT_YET_SHIPPED:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.NOT_YET_SHIPPED];
-    case TIMELINE_STEPS.AVAILABLE_FOR_PICKUP:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.AVAILABLE_FOR_PICKUP];
-    case TIMELINE_STEPS.WAITING_FOR_CUSTOMER_ACTION:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.WAITING_FOR_CUSTOMER_ACTION];
-    case TIMELINE_STEPS.DELIVERED_TO_SENDER:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.DELIVERED_TO_SENDER];
-    case TIMELINE_STEPS.IN_TRANSIT:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.IN_TRANSIT];
-    case TIMELINE_STEPS.DELIVERY_FAILED:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.DELIVERY_FAILED];
-    case TIMELINE_STEPS.DELIVERED:
-      return TIMELINE_STEPS_ORDER[TIMELINE_STEPS.DELIVERED];
-    default:
-      return 0;
-  }
+  const status = trackingData?.CurrentStatus.state;
+  return TIMELINE_STEPS_ORDER[status ?? TIMELINE_STEPS.NOT_YET_SHIPPED];
 };
 
-export const getCurrentStateColor = (trackingData: TrackingInfo | null) : string=> {
+export const getCurrentStateColor = (
+  trackingData: TrackingInfo | null
+): string => {
   switch (trackingData?.CurrentStatus.state) {
     case TIMELINE_STEPS.TICKET_CREATED:
-      return "green";
+      return Colors.Succedeed;
     case TIMELINE_STEPS.PACKAGE_RECEIVED:
-      return "green";
+      return Colors.Succedeed;
     case TIMELINE_STEPS.OUT_FOR_DELIVERY:
-      return "green";
-    case TIMELINE_STEPS.CANCELLED:
-      return "red";
-    case TIMELINE_STEPS.NOT_YET_SHIPPED:
-      return "orange";
-    case TIMELINE_STEPS.AVAILABLE_FOR_PICKUP:
-      return "orange";
-    case TIMELINE_STEPS.WAITING_FOR_CUSTOMER_ACTION:
-      return "orange";
-    case TIMELINE_STEPS.DELIVERED_TO_SENDER:
-      return "red";
-    case TIMELINE_STEPS.IN_TRANSIT:
-      return "orange";
-    case TIMELINE_STEPS.DELIVERY_FAILED:
-      return "red";
+      return Colors.Succedeed;
     case TIMELINE_STEPS.DELIVERED:
-      return "green";
+      return Colors.Succedeed;
+    case TIMELINE_STEPS.NOT_YET_SHIPPED:
+      return Colors.Warning;
+    case TIMELINE_STEPS.AVAILABLE_FOR_PICKUP:
+      return Colors.Warning;
+    case TIMELINE_STEPS.WAITING_FOR_CUSTOMER_ACTION:
+      return Colors.Warning;
+    case TIMELINE_STEPS.IN_TRANSIT:
+      return Colors.Warning;
+    case TIMELINE_STEPS.DELIVERY_FAILED:
+      return Colors.Failed;
+    case TIMELINE_STEPS.CANCELLED:
+      return Colors.Failed;
+    case TIMELINE_STEPS.DELIVERED_TO_SENDER:
+      return Colors.Failed;
+
     default:
-      return "blue";
+      return "black";
   }
 };

@@ -6,6 +6,7 @@ import TrackingStatus from "./TrackShipment/TrackingStatus";
 import { TrackingInfo } from "../Typings/TrackingInfo";
 import { useAppSelector } from "../store/hooks/hooks";
 import { getCurrentStateColor } from "../utils/tracking";
+import { formatDateTime } from "../utils/helpers";
 
 const TrackingDetails: React.FC = () => {
   // *************** i18n ***************
@@ -30,7 +31,7 @@ const TrackingDetails: React.FC = () => {
         </div>
         <div>
           <p className="headLine">{t("Last_Update")}</p>
-          <p>{trackingData?.CurrentStatus.timestamp}</p>
+          <p>{formatDateTime(trackingData?.CurrentStatus.timestamp)}</p>
         </div>
         <div>
           <p className="headLine">{t("Provider_Name")}</p>
@@ -38,7 +39,7 @@ const TrackingDetails: React.FC = () => {
         </div>
         <div>
           <p className="headLine">{t("Delivery_time_within")}</p>
-          <p>{trackingData?.PromisedDate}</p>
+          <p>{formatDateTime(trackingData?.PromisedDate)}</p>
         </div>
       </div>
       <Divider />

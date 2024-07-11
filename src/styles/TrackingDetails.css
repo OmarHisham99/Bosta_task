@@ -18,9 +18,9 @@
     font-size: 12px;
     display: flex;
     color: #a7a7a7;
+    justify-content: center;
 }
 
 .steps {
     font-family: cairo;
 }
-

@@ -5,7 +5,7 @@ import { TrackingInfo } from "../Typings/TrackingInfo";
 // Function to get the current step of the tracking
 export const getCurrentStep = (trackingData: TrackingInfo | null) => {
   const status = trackingData?.CurrentStatus.state;
-  return TIMELINE_STEPS_ORDER[status ?? TIMELINE_STEPS.NOT_YET_SHIPPED];
+  return TIMELINE_STEPS_ORDER[status || ""] || 0;
 };
 
 export const getCurrentStateColor = (

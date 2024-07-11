@@ -29,13 +29,7 @@ export default function Header() {
     return t(item);
   };
 
-  const menuItems = [
-    "Home",
-    "Prices",
-    "Call_Sales",
-    "Track_Shipment",
-    "Sign_In",
-  ];
+  const menuItems = ["Home", "Prices", "Call_Sales", "Sign_In"];
 
   return (
     <Navbar disableAnimation isBordered>
@@ -108,6 +102,9 @@ export default function Header() {
         ))}
         <NavbarMenuItem className="language-switch">
           <LanguageSwitcher />
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <TrackShipments />
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>

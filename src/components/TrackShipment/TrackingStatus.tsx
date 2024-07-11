@@ -30,7 +30,7 @@ const TrackingStatus: React.FC<TrackingStatusProps> = ({ trackingData }) => {
       <Steps className="steps" current={currentStep} progressDot={TrackingDots}>
         <Steps.Step subTitle={t("TICKET_CREATED")} />
         <Steps.Step subTitle={t("PACKAGE_RECEIVED")} />
-        <Steps.Step subTitle={t("OUT_FOR_DELIVERY")} icon={Truck} />
+        <Steps.Step subTitle={t("OUT_FOR_DELIVERY")} />
         <Steps.Step subTitle={t("DELIVERED")} />
       </Steps>
     </ConfigProvider>

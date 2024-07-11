@@ -18,9 +18,7 @@ function App() {
   useEffect(() => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
-  const trackingData = useAppSelector(
-    (state) => state.tracking.trackingInfoData
-  );
+
   return (
     <div className="App">
       <Header />
